@@ -1,6 +1,8 @@
 <?php
-// Récupère le prénom depuis le formulaire POST, avec "Ton ami" par défaut
 $mon_nom = htmlspecialchars(trim($_POST['n'] ?? 'Votre ami'));
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$base_url = $protocol . '://' . $_SERVER['HTTP_HOST'];
+$share_url = $base_url . '/?n=' . urlencode($mon_nom);
 ?>
 
 <!DOCTYPE html>
@@ -12,14 +14,7 @@ $mon_nom = htmlspecialchars(trim($_POST['n'] ?? 'Votre ami'));
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta property="og:site_name" content="Créer Un Souhait" />
-    <meta property="og:image" content="https://christmas.page.gd/pic/joy.png" /> 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TK87D42REW"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-TK87D42REW');
-    </script>
+    <meta property="og:image" content="pic/joy.png" />
     <link rel="icon" type="image/png" href="pic/cot5.png">
     <link rel="shortcut icon" href="pic/cot5.png" type="image/png">
     <title>!!<?php echo $mon_nom; ?> vous souhaite joyeux Noël !!</title>
@@ -209,18 +204,6 @@ $mon_nom = htmlspecialchars(trim($_POST['n'] ?? 'Votre ami'));
 </marquee>
 
   <div class="mainContainer" id="mainContainer">
-    <center> 
-      <script type="text/javascript"> 
-      atOptions = { 
-        'key' : '073b94f6e6c2ba2d99d42f072bbfa309', 
-        'format' : 'iframe', 
-        'height' : 50, 
-        'width' : 320, 
-        'params' : {} 
-      }; 
-      </script> 
-      <script type="text/javascript" src="//www.highperformanceformat.com/073b94f6e6c2ba2d99d42f072bbfa309/invoke.js"></script> 
-    </center>
     <br>
     <h1 id="username"><?php echo $mon_nom; ?></h1>
     <h3 class="fromMessage" id="fromMessage"></h3>
@@ -257,18 +240,7 @@ $mon_nom = htmlspecialchars(trim($_POST['n'] ?? 'Votre ami'));
             !!Joyeux noël!!
         </p><br>
     </div> 
-    <center> 
-      <script type="text/javascript"> atOptions = { 
-        'key' : '3958e07d46ccd9c050d6d905e326bf91', 
-        'format' : 'iframe', 
-        'height' : 250, 
-        'width' : 300, 
-        'params' : {} 
-        }; 
-      </script> 
-    </center> 
-    
-<script type="text/javascript" src="//www.highperformanceformat.com/3958e07d46ccd9c050d6d905e326bf91/invoke.js"></script>
+
 
     <div style="margin-top:8px;">
       😀<span id="show-name" style="color: red;"><?php echo $mon_nom; ?></span>😘
@@ -281,12 +253,12 @@ $mon_nom = htmlspecialchars(trim($_POST['n'] ?? 'Votre ami'));
     <div class="platforms" id="platforms">
       <center>
         <!-- LIEN WHATSAPP CORRIGÉ -->
-        <a href="https://wa.me/?text=🎁 Avez-vous vu ça ? *<?php echo $mon_nom; ?>* t'a envoyé une surprise de Noël 😍%0A👉 Ouvre ici : https://christmas.page.gd/?n=<?php echo urlencode($mon_nom); ?>%0AJoyeux Noël 🎄" data-os="Whatsapp">
+        <a href="https://wa.me/?text=🎁 Avez-vous vu ça ? *<?php echo $mon_nom; ?>* t'a envoyé une surprise de Noël 😍%0A👉 Ouvre ici : <?php echo $share_url; ?>%0AJoyeux Noël 🎄" data-os="Whatsapp">
           <img src="pic/tsapp.png" style="animation: tada 2s infinite;margin-top:5px;height:50px;width:50px;">
         </a>
         
         <!-- LIEN MESSENGER CORRIGÉ -->
-        <a href="fb-messenger://share/?link=<?php echo urlencode('https://christmas.page.gd/?n=' . $mon_nom); ?>" data-os="Facebook Messenger">
+        <a href="fb-messenger://share/?link=<?php echo urlencode($share_url); ?>" data-os="Facebook Messenger">
           <img src="pic/fbicon.png" style="animation: tada 2s infinite;margin-top:5px;height:50px;width:50px;">
         </a>
       </center>
@@ -304,7 +276,7 @@ $mon_nom = htmlspecialchars(trim($_POST['n'] ?? 'Votre ami'));
     </audio>
 
     <script>
-      var countDownDate = new Date("Dec 25, 2025 00:00:00").getTime();
+      var countDownDate = new Date("Dec 25, 2026 00:00:00").getTime();
       var x = setinterval(function() {
         var now = new Date().getTime();
         var distance = countDownDate - now;
@@ -322,6 +294,5 @@ $mon_nom = htmlspecialchars(trim($_POST['n'] ?? 'Votre ami'));
     </script>
 
   </div> 
-  <script type='text/javascript' src='//pl28068655.effectivegatecpm.com/61/45/12/6145126400fe243428bdd0a0c8da089a.js'></script>
 </body>
 </html>

@@ -11,14 +11,7 @@ $nom_expediteur = htmlspecialchars(trim($_GET['n'] ?? 'Votre ami'));
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta property="og:site_name" content="Créer Un Souhait" />
-  <meta property="og:image" content="https://christmas.page.gd/pic/joy.png" /> 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TK87D42REW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-TK87D42REW');
-  </script>
+  <meta property="og:image" content="pic/joy.png" />
   <link rel="icon" type="image/png" href="pic/cot5.png"> 
   <link rel="shortcut icon" href="pic/cot5.png" type="image/png">
   <title><?php echo $nom_expediteur; ?> vous a envoyer un message surprise🧑‍🎄. Ouvrez-le</title>
@@ -406,20 +399,7 @@ $nom_expediteur = htmlspecialchars(trim($_GET['n'] ?? 'Votre ami'));
     <img src="pic/cot8.png" height="30px" width="30px" /><br><br>
   </marquee>
   <div class="mainContainer" id="mainContainer"> 
-    <center> 
-      <script type="text/javascript"> 
-      atOptions = { 
-        'key' : '073b94f6e6c2ba2d99d42f072bbfa309', 
-        'format' : 'iframe', 
-        'height' : 50, 
-        'width' : 320, 
-        'params' : {} 
-      }; 
-      </script> 
-      <script type="text/javascript" src="//www.highperformanceformat.com/073b94f6e6c2ba2d99d42f072bbfa309/invoke.js"></script> 
-    </center>
-
-    <br>
+      <br>
     <h1 id="username" style="font-family:SF Espresso Shack;"><?php echo $nom_expediteur; ?></h1>
     <h3 class="fromMessage" id="fromMessage"></h3><br>
 
@@ -488,7 +468,7 @@ $nom_expediteur = htmlspecialchars(trim($_GET['n'] ?? 'Votre ami'));
     </script>
     <script>
       // Set the date we're counting down to
-      var countDownDate = new Date("Dec 25, 2025 00:00:00").getTime();
+      var countDownDate = new Date("Dec 25, 2026 00:00:00").getTime();
 
       // Update the count down every 02 second
       var x = setInterval(function () {
@@ -523,7 +503,6 @@ $nom_expediteur = htmlspecialchars(trim($_GET['n'] ?? 'Votre ami'));
         sound.play()
       }
     </script> 
-    <script type='text/javascript' src='//pl28068655.effectivegatecpm.com/61/45/12/6145126400fe243428bdd0a0c8da089a.js'></script>
 </body>
 
 </html>
